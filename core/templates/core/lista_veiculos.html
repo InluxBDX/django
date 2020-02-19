@@ -1,0 +1,30 @@
+<style>
+	
+	ul{
+		font-size: 15px;
+	}
+
+
+</style>
+
+
+<h2>Listagem de Veiculos<h2>
+<ul>
+	{% for veiculo in veiculos %}
+		<li>
+			<a href="{% url 'core_veiculo_update' veiculo.id %}">{{veiculo.id}} {{veiculo.marca}} {{veiculo.cor}}</a>
+		<li>
+
+	{% endfor %}
+</ul>
+
+
+
+
+<form action="{% url 'core_veiculo_novo' %}" method="POST">
+	{% csrf_token %}
+
+	{{form.as_p}}
+	<button type="submit">Cadastrar</button>
+
+</form>

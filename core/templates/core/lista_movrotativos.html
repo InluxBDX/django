@@ -1,0 +1,19 @@
+<h2>Listagem de MovRotativo</h2>
+
+{% for movrots in movrot %}
+	<li>
+		
+		<a href="{% url 'core_movrot_update' movrots.id %}">{{"Data entrada: "}} {{ movrots.data_entrada}}<br>{{"Veículo:  "}}{{ movrots.veiculo}} {{"  "}}<br>{{ "Valor Hora:  "}} {{movrots.valor_hora}}</p></a>
+	<li>
+
+	</li>
+{%endfor%}
+
+
+<form action="{% url 'core_mov_rotativonovo' %}" method="POST">
+	{% csrf_token %}
+
+	{{form.as_p}}
+	<button type="submit">Cadastrar</button>
+
+</form>

@@ -1,0 +1,19 @@
+<h2>Listagem de Mov_Mensalistas</h2>
+
+{% for mov_mensalista in mov_mensalistas %}
+	<li>
+		<a href="{% url 'core_mov_mensalista_update' mov_mensalista.id %}"> Mensalista {{ mov_mensalista.mensalista}}</a>	 
+	
+	</li>
+{%endfor%}
+
+
+
+
+<form action="{% url 'core_movmensalistas_novo' %}" method="POST">
+	{% csrf_token %}
+
+	{{form.as_p}}
+	<button type="submit">Cadastrar</button>
+
+</form>
