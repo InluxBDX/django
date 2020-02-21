@@ -1,1 +1,43 @@
+{% extends 'base.html' %}
+
+{% block menu %} 
+
+ <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'core_home' %}">Home</a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+      <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veículos</a>
+      <a class="dropdown-item" href="#">Rotativo</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Mensalista</a>
+    </div>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+
+{% endblock %}
+{% block main %}
+
+	<div class="row">
+		<div class="col-12">
+			<h1>This is the shit system</h1>
+
+		<a href="/admin/login/?next=/sistema/">Login</a>
+
+		</div>
+
+
+
+
+{% endblock %}
+
 {{mensagem}}
